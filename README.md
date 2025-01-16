@@ -9,9 +9,12 @@ Stworzenie interaktywnego portalu inwestycyjnego, który pozwala na:
 ## Technologie
 - **Backend:** Python (FastAPI/Flask) do zarządzania logiką biznesową i integracji z bazą danych MongoDB.
 - **Frontend:** React.js do stworzenia nowoczesnego i interaktywnego interfejsu użytkownika.
-- **Baza danych:** MongoDB do przechowywania danych użytkowników, transakcji i portfeli.
+- **Baza danych:**
+  - **MongoDB:** Do przechowywania danych użytkowników, transakcji i portfeli.
+  - **PostgreSQL:** Do przechowywania ustrukturyzowanych danych, takich jak dane użytkowników i analizy finansowe.
 - **Java:** Do obsługi modułów zaawansowanej analizy finansowej i symulacji rynkowych.
-- **Konteneryzacja:** Docker do izolacji aplikacji, Kubernetes (opcjonalnie) do skalowalności.
+- **Tomcat:** Hostuje moduły w Javie, działające w kontenerach Docker.
+- **Konteneryzacja:** Docker do izolacji aplikacji.
 - **Hosting:** AWS lub DigitalOcean do wdrożenia aplikacji.
 - **API rynkowe:** CoinMarketCap (darmowe API do pobierania danych kryptowalutowych).
 
@@ -43,7 +46,7 @@ Stworzenie interaktywnego portalu inwestycyjnego, który pozwala na:
    - Historia cen (React.js + biblioteka Chart.js).
 2. Analizy finansowe:
    - Obliczanie ROI, średniej zmienności, itp.
-   - Moduł w Javie do zaawansowanych symulacji finansowych.
+   - Moduł w Javie do zaawansowanych symulacji finansowych hostowany na Tomcat.
 3. Ranking użytkowników na podstawie wyników portfeli.
 
 ### Faza 4: Edukacja i rozszerzenia
@@ -58,8 +61,8 @@ Stworzenie interaktywnego portalu inwestycyjnego, który pozwala na:
 ## Podział zadań
 - **Backend (Python):** FastAPI/Flask, integracja z MongoDB, API dla danych kryptowalut.
 - **Frontend (React.js):** Interfejs użytkownika, wykresy, integracja z backendem.
-- **Java:** Moduły analizy finansowej i symulacji rynkowej.
-- **DevOps:** Docker, Kubernetes, wdrożenie na serwer.
+- **Java:** Moduły analizy finansowej i symulacji rynkowej hostowane na Tomcat.
+- **DevOps:** Docker do izolacji aplikacji, konfiguracja kontenerów dla Tomcat i baz danych.
 
 ## Koszty i zasoby
 - **Hosting i infrastruktura:**
@@ -78,11 +81,15 @@ Stworzenie interaktywnego portalu inwestycyjnego, który pozwala na:
    - Rejestracja, logowanie, zarządzanie portfelami.
 4. Praca nad frontendem:
    - Podstawowy interfejs dla portfeli.
-5. Integracja z API i testy funkcjonalności.
-6. Konteneryzacja aplikacji (Docker).
-7. Wdrożenie na serwer i testy end-to-end.
+5. Konfiguracja Tomcat w Dockerze:
+   - Stworzenie obrazu Dockera dla Tomcat i modułów w Javie.
+   - Integracja z PostgreSQL i MongoDB.
+6. Integracja z API i testy funkcjonalności.
+7. Konteneryzacja aplikacji (Docker).
+8. Wdrożenie na serwer i testy end-to-end.
 
 ## Dalszy rozwój
 - Optymalizacja wydajności.
 - Rozbudowa o nowe funkcje (np. wykresy, ranking).
 - Zbieranie opinii użytkowników i wdrażanie ulepszeń.
+
