@@ -1,5 +1,9 @@
 # InvestSim - Portal Inwestycyjny
 
+
+## Architektura systemu
+![Architektura systemu InvestSim](struktura.svg)
+
 ## Cel projektu
 Stworzenie interaktywnego portalu inwestycyjnego, który pozwala na:
 - Symulowanie inwestycji w różne aktywa (akcje, kryptowaluty itp.) z wykorzystaniem fikcyjnych pieniędzy.
