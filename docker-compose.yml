@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Frontend - aplikacja React.js
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+    networks:
+      - investsim-network
+
+  # Backend - FastAPI (Python)
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/investsim
+      - POSTGRES_URI=postgresql://postgres:postgres@postgres:5432/investsim
+      - JWT_SECRET=your_super_secret_key_change_in_production
+      - COINMARKETCAP_API_KEY=your_api_key_here
+    depends_on:
+      - mongo
+      - postgres
+    networks:
+      - investsim-network
+
+  # Moduł analityczny - Java + Tomcat
+  analytics:
+    build: ./analytics
+    ports:
+      - "8080:8080"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/investsim
+      - POSTGRES_URI=jdbc:postgresql://postgres:5432/investsim
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - mongo
+      - postgres
+    networks:
+      - investsim-network
+
+  # MongoDB - baza danych dla portfeli i transakcji
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+      - ./db/mongo/init.js:/docker-entrypoint-initdb.d/init.js:ro
+    networks:
+      - investsim-network
+
+  # PostgreSQL - baza danych dla analizy finansowej
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=investsim
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./db/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - investsim-network
+
+networks:
+  investsim-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+  postgres-data:

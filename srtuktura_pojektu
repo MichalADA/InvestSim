@@ -1,0 +1,63 @@
+investsim/
+├── docker-compose.yml                # Konfiguracja Docker Compose dla całego środowiska
+├── .gitignore                        # Pliki i foldery ignorowane przez Git
+├── README.md                         # Dokumentacja projektu
+│
+├── frontend/                         # Aplikacja React.js
+│   ├── public/                       # Pliki statyczne
+│   ├── src/                          # Kod źródłowy React
+│   │   ├── components/               # Komponenty React
+│   │   │   ├── auth/                 # Komponenty autoryzacji
+│   │   │   ├── dashboard/            # Komponenty dla głównego dashboardu
+│   │   │   ├── portfolio/            # Komponenty dla zarządzania portfelem
+│   │   │   ├── market/               # Komponenty rynkowe (wykresy, ceny)
+│   │   │   └── shared/               # Współdzielone komponenty
+│   │   ├── services/                 # Usługi API i integracje
+│   │   ├── store/                    # Stan aplikacji (Redux/Context)
+│   │   ├── pages/                    # Główne strony aplikacji
+│   │   ├── App.js                    # Główny komponent aplikacji
+│   │   └── index.js                  # Punkt wejścia
+│   ├── package.json                  # Zależności npm
+│   └── Dockerfile                    # Konfiguracja kontenera dla frontendu
+│
+├── backend/                          # API FastAPI (Python)
+│   ├── app/                          # Kod źródłowy
+│   │   ├── api/                      # Endpointy API
+│   │   │   ├── auth.py               # Endpointy autoryzacji
+│   │   │   ├── portfolio.py          # Zarządzanie portfelami
+│   │   │   ├── transactions.py       # Obsługa transakcji
+│   │   │   └── market_data.py        # Dane rynkowe
+│   │   ├── core/                     # Główna logika aplikacji
+│   │   │   ├── config.py             # Konfiguracja
+│   │   │   ├── security.py           # Bezpieczeństwo i autoryzacja
+│   │   │   └── db.py                 # Połączenia z bazami danych
+│   │   ├── models/                   # Modele danych
+│   │   │   ├── user.py               # Model użytkownika
+│   │   │   ├── portfolio.py          # Model portfela
+│   │   │   └── transaction.py        # Model transakcji
+│   │   ├── services/                 # Serwisy biznesowe
+│   │   │   ├── auth_service.py       # Serwis autoryzacji
+│   │   │   ├── portfolio_service.py  # Serwis portfeli
+│   │   │   └── market_service.py     # Serwis danych rynkowych
+│   │   └── main.py                   # Główny plik aplikacji
+│   ├── requirements.txt              # Zależności Pythona
+│   └── Dockerfile                    # Konfiguracja kontenera dla backendu
+│
+├── analytics/                        # Moduł analityczny Java
+│   ├── src/                          # Kod źródłowy Java
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com/investsim/analytics/
+│   │       │       ├── controllers/  # Kontrolery REST
+│   │       │       ├── models/       # Modele danych
+│   │       │       ├── services/     # Serwisy biznesowe
+│   │       │       └── utils/        # Narzędzia pomocnicze
+│   │       └── resources/            # Zasoby
+│   ├── pom.xml                       # Zarządzanie zależnościami Maven
+│   └── Dockerfile                    # Konfiguracja kontenera Tomcat
+│
+└── db/                               # Konfiguracja baz danych
+    ├── mongo/                        # Inicjalizacja MongoDB
+    │   └── init.js                   # Skrypt inicjalizacyjny
+    └── postgres/                     # Inicjalizacja PostgreSQL
+        └── init.sql                  # Skrypt inicjalizacyjny

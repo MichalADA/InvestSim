@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="5" ry="5"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">InvestSim - Architektura Systemu</text>
+  
+  <!-- Containers -->
+  <rect x="50" y="80" width="700" height="480" fill="#e9ecef" stroke="#ced4da" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="100" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#495057">Infrastruktura w chmurze (AWS/DigitalOcean)</text>
+  
+  <!-- Frontend Container -->
+  <rect x="80" y="130" width="200" height="120" fill="#fff" stroke="#6c757d" stroke-width="2" rx="5" ry="5"/>
+  <text x="180" y="150" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#495057">Frontend</text>
+  <rect x="100" y="160" width="160" height="30" fill="#e6f7ff" stroke="#91d5ff" stroke-width="1" rx="3" ry="3"/>
+  <text x="180" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#1890ff">React.js</text>
+  <rect x="100" y="200" width="160" height="30" fill="#e6f7ff" stroke="#91d5ff" stroke-width="1" rx="3" ry="3"/>
+  <text x="180" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#1890ff">Chart.js</text>
+  
+  <!-- Backend API Container -->
+  <rect x="300" y="130" width="200" height="120" fill="#fff" stroke="#6c757d" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="150" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#495057">Backend API</text>
+  <rect x="320" y="160" width="160" height="30" fill="#e6ffec" stroke="#b7eb8f" stroke-width="1" rx="3" ry="3"/>
+  <text x="400" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#52c41a">FastAPI (Python)</text>
+  <rect x="320" y="200" width="160" height="30" fill="#e6ffec" stroke="#b7eb8f" stroke-width="1" rx="3" ry="3"/>
+  <text x="400" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#52c41a">API Integracje</text>
+  
+  <!-- Java Analytics Module -->
+  <rect x="520" y="130" width="200" height="120" fill="#fff" stroke="#6c757d" stroke-width="2" rx="5" ry="5"/>
+  <text x="620" y="150" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#495057">Moduł Analityczny</text>
+  <rect x="540" y="160" width="160" height="30" fill="#fff1f0" stroke="#ffa39e" stroke-width="1" rx="3" ry="3"/>
+  <text x="620" y="180" font-family="Arial" font-size="12" text-anchor="middle" fill="#f5222d">Java</text>
+  <rect x="540" y="200" width="160" height="30" fill="#fff1f0" stroke="#ffa39e" stroke-width="1" rx="3" ry="3"/>
+  <text x="620" y="220" font-family="Arial" font-size="12" text-anchor="middle" fill="#f5222d">Tomcat</text>
+  
+  <!-- Databases Container -->
+  <rect x="80" y="280" width="640" height="120" fill="#fff" stroke="#6c757d" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="300" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#495057">Bazy Danych</text>
+  
+  <!-- MongoDB -->
+  <rect x="100" y="320" width="280" height="60" fill="#f0f5ff" stroke="#adc6ff" stroke-width="1" rx="3" ry="3"/>
+  <text x="240" y="350" font-family="Arial" font-size="12" text-anchor="middle" fill="#2f54eb">MongoDB</text>
+  <text x="240" y="370" font-family="Arial" font-size="10" text-anchor="middle" fill="#2f54eb">Użytkownicy, Portfele, Transakcje</text>
+  
+  <!-- PostgreSQL -->
+  <rect x="420" y="320" width="280" height="60" fill="#f6ffed" stroke="#b7eb8f" stroke-width="1" rx="3" ry="3"/>
+  <text x="560" y="350" font-family="Arial" font-size="12" text-anchor="middle" fill="#52c41a">PostgreSQL</text>
+  <text x="560" y="370" font-family="Arial" font-size="10" text-anchor="middle" fill="#52c41a">Dane użytkowników, Analizy finansowe</text>
+  
+  <!-- External APIs Container -->
+  <rect x="80" y="420" width="640" height="120" fill="#fff" stroke="#6c757d" stroke-width="2" rx="5" ry="5"/>
+  <text x="400" y="440" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold" fill="#495057">Zewnętrzne API</text>
+  
+  <!-- CoinMarketCap -->
+  <rect x="100" y="460" width="280" height="60" fill="#fff2e8" stroke="#ffbb96" stroke-width="1" rx="3" ry="3"/>
+  <text x="240" y="490" font-family="Arial" font-size="12" text-anchor="middle" fill="#fa541c">CoinMarketCap API</text>
+  <text x="240" y="510" font-family="Arial" font-size="10" text-anchor="middle" fill="#fa541c">Dane o kryptowalutach</text>
+  
+  <!-- Stock Market API -->
+  <rect x="420" y="460" width="280" height="60" fill="#fff2e8" stroke="#ffbb96" stroke-width="1" rx="3" ry="3"/>
+  <text x="560" y="490" font-family="Arial" font-size="12" text-anchor="middle" fill="#fa541c">Giełda - API</text>
+  <text x="560" y="510" font-family="Arial" font-size="10" text-anchor="middle" fill="#fa541c">Dane o akcjach</text>
+  
+  <!-- Connection lines -->
+  <!-- Front to Back -->
+  <line x1="180" y1="250" x2="300" y2="180" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Back to Front -->
+  <line x1="300" y1="190" x2="180" y2="260" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Back to Java -->
+  <line x1="500" y1="180" x2="520" y2="180" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Java to Back -->
+  <line x1="520" y1="190" x2="500" y2="190" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Back to MongoDB -->
+  <line x1="400" y1="250" x2="240" y2="320" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Back to PostgreSQL -->
+  <line x1="400" y1="250" x2="560" y2="320" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Java to PostgreSQL -->
+  <line x1="620" y1="250" x2="560" y2="320" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Back to CMC API -->
+  <line x1="400" y1="250" x2="240" y2="460" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Back to Stock API -->
+  <line x1="400" y1="250" x2="560" y2="460" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+</svg>
