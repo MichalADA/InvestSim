@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  # Frontend - aplikacja React.js
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
-      - REACT_APP_API_URL=http://localhost:8000/api
-    depends_on:
-      - backend
-    networks:
-      - investsim-network
+ # Frontend - aplikacja React.js (Vite)
+frontend:
+  build: ./frontend
+  ports:
+    - "5173:5173"  # Domyślny port Vite
+  volumes:
+    - ./frontend:/app
+    - /app/node_modules
+  environment:
+    - NODE_ENV=development
+    - VITE_API_URL=http://localhost:8000/api  # Vite używa VITE_ zamiast REACT_APP_
+  depends_on:
+    - backend
+  networks:
+    - investsim-network
 
   # Backend - FastAPI (Python)
   backend:

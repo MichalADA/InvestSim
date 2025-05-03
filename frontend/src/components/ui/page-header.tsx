@@ -1,0 +1,31 @@
+
+import React from 'react';
+import { cn } from '@/lib/utils';
+
+interface PageHeaderProps {
+  title: string;
+  description?: string;
+  className?: string;
+  action?: React.ReactNode;
+}
+
+export function PageHeader({ 
+  title, 
+  description, 
+  className, 
+  action 
+}: PageHeaderProps) {
+  return (
+    <div className={cn("mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between", className)}>
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+        {description && (
+          <p className="text-muted-foreground mt-1">{description}</p>
+        )}
+      </div>
+      {action && (
+        <div className="mt-2 sm:mt-0">{action}</div>
+      )}
+    </div>
+  );
+}
